@@ -1,0 +1,19 @@
+{
+  "name": "codealpha-event-registration",
+  "version": "1.0.0",
+  "description": "Event registration system built with Express.js and SQLite (CodeAlpha Backend Task 2)",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning src/server.js",
+    "dev": "node --disable-warning=ExperimentalWarning --watch src/server.js",
+    "test": "node --disable-warning=ExperimentalWarning --test"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "license": "MIT"
+}

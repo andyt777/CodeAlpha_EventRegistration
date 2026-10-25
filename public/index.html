@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gatherly — Save your seat at the events that grow your career</title>
+  <meta name="description" content="Discover workshops, meetups and hackathons. Register in seconds, keep all your tickets in one place and cancel any time.">
+  <meta name="theme-color" content="#6d28d9">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%236d28d9'/%3E%3Crect x='8' y='9' width='16' height='15' rx='2.5' stroke='white' stroke-width='2.2' fill='none'/%3E%3Cpath d='M8 14h16M12 7v4M20 7v4' stroke='white' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="#/"><span class="logo-mark" data-icon="calendar" data-size="18"></span>Gatherly</a>
+      <nav class="nav" aria-label="Main">
+        <a href="#/" data-scroll="events">Events</a>
+        <a href="#/" data-scroll="how">How it works</a>
+        <a href="#/" data-scroll="organizers">For organizers</a>
+        <a href="#/" data-scroll="faq">FAQ</a>
+      </nav>
+      <div class="header-actions" id="header-actions"></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== LANDING ===================== -->
+    <div id="page-home">
+      <!-- 1. HERO -->
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <span class="pill"><span class="live"></span><span id="hero-pill">Upcoming events are open for registration</span></span>
+            <h1 class="display">Never miss the events that <em>grow your career</em>.</h1>
+            <p class="lead">Workshops, meetups and hackathons from people who build things. Save your seat in seconds and keep every ticket in one place.</p>
+
+            <p class="preview-label">Next up</p>
+            <div class="preview" id="preview" aria-label="Next events">
+              <div class="skeleton" style="height:78px"></div>
+              <div class="skeleton" style="height:78px"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="signup-card" id="hero-card">
+              <form id="hero-form" class="form" novalidate>
+                <div>
+                  <h2>Create your free account</h2>
+                  <p class="sub">Takes 20 seconds. Then register for any event with one click.</p>
+                </div>
+                <div class="field">
+                  <label for="hero-name">Full name</label>
+                  <input id="hero-name" name="name" autocomplete="name" placeholder="Alex Popescu">
+                </div>
+                <div class="form-row">
+                  <div class="field">
+                    <label for="hero-email">Email</label>
+                    <input id="hero-email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+                  </div>
+                  <div class="field">
+                    <label for="hero-password">Password</label>
+                    <input id="hero-password" name="password" type="password" autocomplete="new-password" placeholder="At least 6 characters">
+                  </div>
+                </div>
+                <div class="form-alert" role="alert"></div>
+                <button class="btn btn-cta btn-lg btn-block" type="submit">Get my free account</button>
+                <div class="microcopy" style="justify-content:center">
+                  <span><span class="i" data-icon="check" data-size="15"></span>Free for attendees</span>
+                  <span><span class="i" data-icon="check" data-size="15"></span>Cancel any time</span>
+                  <span><span class="i" data-icon="check" data-size="15"></span>No spam</span>
+                </div>
+                <p class="switch-line">Already have an account? <button type="button" class="link-btn" data-open-auth="login">Log in</button></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. SOCIAL PROOF -->
+      <section class="proof" aria-label="Community in numbers">
+        <div class="container">
+          <span class="proof-label">Live on Gatherly right now:</span>
+          <div class="proof-stat"><strong id="stat-events">0</strong><span>upcoming events</span></div>
+          <span class="proof-sep"></span>
+          <div class="proof-stat"><strong id="stat-seats">0</strong><span>seats already booked</span></div>
+          <span class="proof-sep"></span>
+          <div class="proof-stat"><strong id="stat-organizers">0</strong><span>organizers hosting</span></div>
+        </div>
+      </section>
+
+      <!-- 3. BENEFITS -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Why Gatherly</span>
+            <h2>Spend your time at events, not on sign-up forms</h2>
+            <p>Everything you need to find, book and manage the events worth your evening.</p>
+          </div>
+          <div class="benefits">
+            <article class="benefit">
+              <div class="ic" data-icon="zap" data-size="22"></div>
+              <h3>Book a seat in 10 seconds</h3>
+              <p>Your details are saved once. Every next registration is a single click — no more retyping your name and email.</p>
+            </article>
+            <article class="benefit">
+              <div class="ic" data-icon="ticket" data-size="22"></div>
+              <h3>Never lose a ticket again</h3>
+              <p>All your registrations live in one place with date, time and location — no digging through your inbox on the day.</p>
+            </article>
+            <article class="benefit">
+              <div class="ic" data-icon="refresh" data-size="22"></div>
+              <h3>Plans changed? Cancel in one click</h3>
+              <p>Free up your seat instantly so someone else can go. No emails to organizers, no awkward explanations.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Events list (the product) -->
+      <section class="section section-soft" id="events">
+        <div class="container">
+          <div class="events-toolbar">
+            <div>
+              <span class="eyebrow">Browse</span>
+              <h2 style="font-size:clamp(1.7rem,3vw,2.2rem)">Find your next event</h2>
+            </div>
+            <div class="actions">
+              <div class="chips" role="group" aria-label="When">
+                <button class="chip" data-when="upcoming" aria-pressed="true">Upcoming</button>
+                <button class="chip" data-when="past" aria-pressed="false">Past</button>
+                <button class="chip" data-when="all" aria-pressed="false">All</button>
+              </div>
+              <div class="search-box">
+                <span class="i" data-icon="search" data-size="16"></span>
+                <label for="search" class="sr-only">Search events</label>
+                <input id="search" class="input" type="search" placeholder="Search by topic or place">
+              </div>
+            </div>
+          </div>
+          <div class="event-grid" id="event-grid"></div>
+        </div>
+      </section>
+
+      <!-- 4. HOW IT WORKS -->
+      <section class="section" id="how">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">How it works</span>
+            <h2>From "that looks cool" to "see you there" in 3 steps</h2>
+          </div>
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><h3>Create a free account</h3><p>Name, email, password. That's all we ask for.</p></div>
+            <div class="step"><div class="step-num">2</div><h3>Pick an event</h3><p>Search by topic or place and see how many seats are left in real time.</p></div>
+            <div class="step"><div class="step-num">3</div><h3>Show up</h3><p>Your ticket waits in "My tickets". Can't make it? Cancel and free the seat.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- For organizers -->
+      <section class="section" id="organizers" style="padding-top:0">
+        <div class="container">
+          <div class="org-band">
+            <div>
+              <span class="eyebrow">For organizers</span>
+              <h2>Fill every seat without a single spreadsheet</h2>
+              <p>Publish an event in two minutes. Gatherly handles registrations, enforces your capacity and keeps the attendee list up to date for you.</p>
+              <button class="btn btn-primary btn-lg" data-open-auth="register-organizer">Start organizing — it's free</button>
+            </div>
+            <div class="org-list">
+              <div><span class="i" data-icon="users" data-size="20"></span><span><strong>Live attendee list</strong><br><span class="muted small">Names, emails, phone numbers and notes — export to CSV in one click.</span></span></div>
+              <div><span class="i" data-icon="shield" data-size="20"></span><span><strong>No overbooking, ever</strong><br><span class="muted small">Capacity is enforced on the server, even when two people click at the same time.</span></span></div>
+              <div><span class="i" data-icon="pencil" data-size="20"></span><span><strong>Edit any time</strong><br><span class="muted small">Change time, place or capacity — attendees always see the latest details.</span></span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. FAQ -->
+      <section class="section section-soft" id="faq">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">FAQ</span>
+            <h2>Good questions</h2>
+          </div>
+          <div class="faq">
+            <details>
+              <summary>Do I have to pay anything?<span class="plus" data-icon="plus" data-size="16"></span></summary>
+              <div class="answer">No. Creating an account and registering for events on Gatherly is free for attendees. Organizers can publish events for free too.</div>
+            </details>
+            <details>
+              <summary>What if I can't make it after registering?<span class="plus" data-icon="plus" data-size="16"></span></summary>
+              <div class="answer">Open "My tickets" and click Cancel — any time before the event starts. Your seat goes back to the pool immediately and you can register again later if there's room.</div>
+            </details>
+            <details>
+              <summary>The event is full. Is there anything I can do?<span class="plus" data-icon="plus" data-size="16"></span></summary>
+              <div class="answer">Seats open up whenever someone cancels, and organizers sometimes increase capacity. Check back on the event page — the seat counter updates in real time.</div>
+            </details>
+            <details>
+              <summary>What do you do with my data?<span class="plus" data-icon="plus" data-size="16"></span></summary>
+              <div class="answer">We only ask for your name, email and (optionally) a phone number. Your password is stored as a salted hash. Only the organizer of an event you register for can see your details for that event.</div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- Closing CTA -->
+      <section class="section">
+        <div class="container">
+          <div class="cta-band">
+            <h2>Your next great evening is one click away.</h2>
+            <p>Join free and grab a seat before they're gone.</p>
+            <button class="btn btn-cta btn-lg" id="cta-bottom">Get my free account</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ===================== MY TICKETS ===================== -->
+    <div id="page-tickets" class="page" hidden>
+      <div class="container container-narrow">
+        <div class="page-head">
+          <div><h1>My tickets</h1><p>Every event you registered for. Cancel any time before it starts.</p></div>
+          <a class="btn btn-secondary" href="#/" data-scroll="events"><span class="i" data-icon="search" data-size="16"></span>Find more events</a>
+        </div>
+        <div class="tabs-line" role="tablist">
+          <button role="tab" data-ticket-tab="upcoming" aria-selected="true">Upcoming</button>
+          <button role="tab" data-ticket-tab="past" aria-selected="false">Past &amp; cancelled</button>
+        </div>
+        <div id="ticket-list"></div>
+      </div>
+    </div>
+
+    <!-- ===================== ORGANIZER ===================== -->
+    <div id="page-organizer" class="page" hidden>
+      <div class="container">
+        <div class="page-head">
+          <div><h1>Organizer dashboard</h1><p>Your events, seats and attendees at a glance.</p></div>
+          <button class="btn btn-cta" id="new-event"><span class="i" data-icon="plus" data-size="18"></span>New event</button>
+        </div>
+        <div class="stat-grid" id="org-stats" style="margin-bottom:28px"></div>
+        <div class="card" style="padding:0">
+          <div class="table-wrap" id="org-events"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <a class="logo" href="#/" style="font-size:1rem"><span class="logo-mark" data-icon="calendar" data-size="15" style="width:26px;height:26px"></span>Gatherly</a>
+      <nav aria-label="Footer">
+        <a href="#/" data-scroll="events">Events</a>
+        <a href="#/" data-scroll="organizers">For organizers</a>
+        <a href="#/" data-scroll="faq">FAQ</a>
+      </nav>
+      <span>© <span id="year"></span> Gatherly</span>
+    </div>
+  </footer>
+
+  <!-- Auth modal -->
+  <dialog class="modal" id="auth-dialog">
+    <div class="modal-body">
+      <div class="modal-head">
+        <div><h2 id="auth-title">Welcome back</h2><p id="auth-sub">Log in to manage your tickets.</p></div>
+        <button class="icon-btn" data-close aria-label="Close"><span class="i" data-icon="x" data-size="18"></span></button>
+      </div>
+      <form id="auth-form" class="form" novalidate>
+        <div class="field register-only">
+          <label for="auth-name">Full name</label>
+          <input id="auth-name" name="fullName" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="auth-email">Email</label>
+          <input id="auth-email" name="email" type="email" autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="auth-password">Password</label>
+          <input id="auth-password" name="password" type="password" autocomplete="current-password">
+        </div>
+        <label class="check register-only"><input type="checkbox" name="organizer"> I want to organize events</label>
+        <div class="form-alert" role="alert"></div>
+        <button class="btn btn-cta btn-block" type="submit" id="auth-submit">Log in</button>
+        <p class="switch-line" id="auth-switch"></p>
+        <p class="muted small" style="text-align:center">Demo: attendee@example.com / attendee123 · organizer@example.com / organizer123</p>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Event detail + registration modal -->
+  <dialog class="modal wide" id="event-dialog"><div id="event-dialog-body"></div></dialog>
+
+  <!-- Create / edit event modal -->
+  <dialog class="modal wide" id="event-form-dialog">
+    <div class="modal-body">
+      <div class="modal-head">
+        <div><h2 id="event-form-title">New event</h2><p>Attendees see these details on the event page.</p></div>
+        <button class="icon-btn" data-close aria-label="Close"><span class="i" data-icon="x" data-size="18"></span></button>
+      </div>
+      <form id="event-form" class="form" novalidate>
+        <input type="hidden" name="eventId">
+        <div class="field"><label for="ev-title">Title</label><input id="ev-title" name="title" maxlength="150" placeholder="Intro to Node.js Workshop"></div>
+        <div class="field"><label for="ev-desc">Description</label><textarea id="ev-desc" name="description" maxlength="5000" placeholder="What will people learn or do?"></textarea></div>
+        <div class="form-row">
+          <div class="field"><label for="ev-location">Location</label><input id="ev-location" name="location" maxlength="200" placeholder="Online (Zoom) or an address"></div>
+          <div class="field"><label for="ev-capacity">Capacity</label><input id="ev-capacity" name="capacity" type="number" min="1" placeholder="50"></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="ev-start">Starts</label><input id="ev-start" name="startsAt" type="datetime-local"></div>
+          <div class="field"><label for="ev-end">Ends <span class="muted">(optional)</span></label><input id="ev-end" name="endsAt" type="datetime-local"></div>
+        </div>
+        <div class="form-alert" role="alert"></div>
+        <div class="actions" style="justify-content:flex-end">
+          <button type="button" class="btn btn-secondary" data-close>Cancel</button>
+          <button type="submit" class="btn btn-cta">Publish event</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Attendees modal -->
+  <dialog class="modal wide" id="attendees-dialog"><div class="modal-body" id="attendees-body"></div></dialog>
+
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>
